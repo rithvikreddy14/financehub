@@ -1,0 +1,57 @@
+# =========================
+# Backend (Python / FastAPI)
+# =========================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.env/
+.venv/
+
+# Local Database
+*.db
+*.sqlite3
+finance.db
+
+# Environment Variables (Security)
+.env
+.env.*
+!.env.example
+
+# Testing
+.pytest_cache/
+coverage.xml
+
+# =========================
+# Frontend (Node / React / Vite)
+# =========================
+# Dependencies
+frontend/node_modules/
+node_modules/
+
+# Production build folders
+frontend/dist/
+frontend/build/
+dist/
+build/
+
+# Vite / NPM cache
+.npm/
+.eslintcache
+
+# =========================
+# OS & IDE Files
+# =========================
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code / JetBrains
+.vscode/
+.idea/
