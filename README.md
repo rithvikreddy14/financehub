@@ -65,8 +65,8 @@ The system was built around three core engineering goals:
 |---|:---:|:---:|:---:|
 | View dashboard & analytics | ✅ | ✅ | ✅ |
 | View financial records | ✅ | ✅ | ❌ |
-| Create & edit records | ✅ | ✅ | ❌ |
-| Delete records | ✅ | ⚠️ Limited | ❌ |
+| Create & edit records | ✅ | ❌ | ❌ |
+| Delete records | ✅ | ❌ | ❌ |
 | Manage users (activate/deactivate) | ✅ | ❌ | ❌ |
 
 ---
