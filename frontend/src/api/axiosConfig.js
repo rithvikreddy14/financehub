@@ -1,4 +1,4 @@
-import axios from 'react';
+import axios from 'axios'; // <-- THIS IS THE FIX!
 import toast from 'react-hot-toast';
 
 // Automatically switch between Vercel production URL and Localhost
