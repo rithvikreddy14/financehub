@@ -1,271 +1,292 @@
-# 📊 FinanceHub Dashboard
+<div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![Status](https://img.shields.io/badge/status-active-success.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![React](https://img.shields.io/badge/React-18.2.0-61dafb.svg?logo=react)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.110.0-009688.svg?logo=fastapi)
+<img src="https://img.shields.io/badge/FinanceHub-1.0.0-1a6bff?style=for-the-badge&logoColor=white" alt="Version" />
+<img src="https://img.shields.io/badge/Status-Live_in_Production-28c87a?style=for-the-badge" alt="Status" />
+<img src="https://img.shields.io/badge/License-MIT-f5a524?style=for-the-badge" alt="License" />
 
-## Description
-FinanceHub is a modern, full-stack SaaS application designed for personal and small business financial tracking. It features a robust Role-Based Access Control (RBAC) system, interactive data visualizations, and secure record management.
+<br/><br/>
 
-## Overview
-This project consists of a React/Vite frontend styled with Tailwind CSS, and a Python backend powered by FastAPI and SQLAlchemy. It allows users to track income and expenses, view dynamic monthly trends, and manage user roles (Admin, Analyst, Viewer).
+# 📊 FinanceHub
 
-## Problem Statement
-Managing daily financial transactions across multiple users often requires complex, paid SaaS tools or messy spreadsheets. Organizations need a simple, self-hosted, and role-restricted dashboard to input and visualize financial health securely.
+### A production-ready, full-stack financial dashboard with JWT authentication, hierarchical Role-Based Access Control, and real-time analytics — deployed and live.
 
-## Solution
-FinanceHub provides a lightweight, instantly deployable solution. With secure JWT authentication, strict Pydantic validation, and beautiful Recharts visualizations, teams can seamlessly track financial metrics with zero steep learning curves.
+<br/>
 
----
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-financehub--lake.vercel.app-1a6bff?style=flat-square)](https://financehub-lake.vercel.app/)
+&nbsp;
+[![GitHub](https://img.shields.io/badge/⌥_Source_Code-rithvikreddy14/financehub-24292e?style=flat-square)](https://github.com/rithvikreddy14/financehub)
 
-# 🚀 Getting Started
+<br/>
 
-## Prerequisites
-Before you begin, ensure you have met the following requirements:
-* **Node.js** (v18.0.0 or higher)
-* **Python** (v3.9 or higher)
-* **npm** or **yarn** package manager
+![React](https://img.shields.io/badge/React-18.2-61dafb?style=flat-square&logo=react&logoColor=black)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688?style=flat-square&logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Production-336791?style=flat-square&logo=postgresql&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=flat-square&logo=vercel)
+![Render](https://img.shields.io/badge/Render-Deployed-46E3B7?style=flat-square&logo=render&logoColor=black)
 
-## Installation
-
-### Backend Setup
-1. Navigate to the backend directory: `cd backend`
-2. Create a virtual environment: `python -m venv venv`
-3. Activate the virtual environment:
-   * Windows: `.\venv\Scripts\activate`
-   * Mac/Linux: `source venv/bin/activate`
-4. Install dependencies: `pip install -r requirements.txt`
-
-### Frontend Setup
-1. Navigate to the frontend directory: `cd frontend`
-2. Install dependencies: `npm install`
-
-## Configuration & Environment Variables
-Currently, the application runs on default local ports.  
-* **Backend:** Runs on `http://127.0.0.1:8000` (SQLite database auto-generates as `finance.db`).
-* **Frontend:** Runs on `http://localhost:5173`.
-* *Note: For production, create a `.env` file in the backend to store secure `SECRET_KEY` and database URLs.*
+</div>
 
 ---
 
-# ▶️ Usage
+## 🎯 What Is This?
 
-## How to Use
-1. Open the application in your browser.
-2. Navigate to the **Register** page to create an account.
-3. **Important:** The first user should be created with the **Admin** role to unlock all features (Record CRUD operations and User Management).
-4. Use the **Dashboard** to view financial summaries and the **Records** page to add/edit transactions.
+FinanceHub is a **SaaS-style financial management application** built to demonstrate enterprise-grade backend engineering. It allows organizations to track income and expenses with **strict, server-enforced access control** — different users see and do different things based on their role.
 
-## Demo & Screenshots
-*(Replace these links with actual screenshots of your application)*
-* [Dashboard View](./docs/dashboard.png)
-* [Records Management](./docs/records.png)
-* [User Management](./docs/users.png)
+The system was built around three core engineering goals:
+
+- **Security first** — RBAC enforced at the API layer (not just the UI), stateless JWT auth, bcrypt password hashing
+- **Backend intelligence** — SQL aggregations computed server-side for dashboard analytics, not raw data dumps to the client
+- **Production quality** — Pydantic validation, proper HTTP status codes, soft deletes, auto-generated Swagger docs, dual-DB strategy (SQLite dev / PostgreSQL prod)
 
 ---
 
-# 🧩 Features & Functionality
+## ✨ Features at a Glance
 
-## Key Features
-* **Role-Based Access Control (RBAC):** Admins can edit data and manage users; Viewers are restricted to read-only dashboard access.
-* **Dynamic Visualizations:** Interactive Pie Charts (Expense Breakdown) and Line Charts (Monthly Trends) using Recharts.
-* **Secure Authentication:** JWT-based login with bcrypt password hashing.
-* **Robust CRUD Operations:** Strict payload validation using Pydantic schemas.
-* **Dark/Light Mode Ready:** Built with Tailwind CSS for highly customizable UIs.
-
-## Roadmap & Future Enhancements
-* [ ] Implement Dark Mode toggle.
-* [ ] Add CSV/Excel export functionality for records.
-* [ ] Integrate email notifications for weekly financial summaries.
-* [ ] Migrate from SQLite to PostgreSQL for production environments.
+| Feature | Details |
+|---|---|
+| 🔐 **JWT Authentication** | Stateless Bearer tokens, Bcrypt password hashing via Passlib |
+| 🛡️ **Role-Based Access Control** | `Admin` / `Analyst` / `Viewer` — enforced server-side via FastAPI dependency injection |
+| 📊 **Dashboard Analytics** | SQL-level aggregations: net balance, income/expense totals, category breakdowns, monthly trends |
+| 📈 **Interactive Charts** | Recharts-powered Line Charts (monthly trends) and Pie Charts (expense breakdown) |
+| 📝 **Full CRUD on Records** | Create, read, update, delete financial entries — gated by role |
+| 🔍 **Advanced Filtering** | Filter records by type, category, date range, and free-text search |
+| 🗑️ **Soft Deletes** | Records marked `is_deleted=True`; users toggled `is_active=False` — no data is permanently lost |
+| ✅ **Pydantic Validation** | Strict schema enforcement on all request payloads with descriptive error responses |
+| 📖 **Auto-generated API Docs** | Swagger UI at `/docs`, ReDoc at `/redoc` — available instantly on local run |
 
 ---
 
-# 🏗️ Project Structure
+## 🛡️ Access Control Matrix
 
-## Folder Structure
-```text
-finance-dashboard/
-├── backend/
-│   ├── main.py              # FastAPI entry point
-│   ├── models.py            # SQLAlchemy database models
-│   ├── schemas.py           # Pydantic validation schemas
-│   ├── security.py          # JWT and hashing logic
-│   ├── routers/             # API route handlers
-│   └── services/            # Business logic and DB queries
-└── frontend/
+> RBAC is enforced at the **FastAPI dependency level**, not the frontend. Sending a raw API request as a Viewer to create a record returns `403 Forbidden`.
+
+| Permission | 🛡️ Admin | 📊 Analyst | 👀 Viewer |
+|---|:---:|:---:|:---:|
+| View dashboard & analytics | ✅ | ✅ | ✅ |
+| View financial records | ✅ | ✅ | ❌ |
+| Create & edit records | ✅ | ✅ | ❌ |
+| Delete records | ✅ | ⚠️ Limited | ❌ |
+| Manage users (activate/deactivate) | ✅ | ❌ | ❌ |
+
+---
+
+## 🧪 Live Demo & Test Credentials
+
+> **Try it now →** [https://financehub-lake.vercel.app/](https://financehub-lake.vercel.app/)
+
+Use these credentials to explore each access level:
+
+| Role | Email | Password | What You Can Do |
+|---|---|---|---|
+| 🛡️ **Admin** | `admin@finance.com` | `000000` | Full access — dashboard, records CRUD, user management |
+| 📊 **Analyst** | `analyst@finance.com` | `000000` | Read & write — dashboard + add/edit/delete records |
+| 👀 **Viewer** | `viewer@finance.com` | `000000` | Read-only — dashboard analytics only |
+
+---
+
+## 🏗️ Architecture & Tech Stack
+
+```
+financehub/
+├── backend/                        # Python / FastAPI
+│   ├── main.py                     # App entry, CORS config
+│   ├── database.py                 # SQLAlchemy engine + dynamic DB routing (SQLite ↔ PostgreSQL)
+│   ├── models.py                   # ORM table definitions
+│   ├── schemas.py                  # Pydantic request/response models
+│   ├── security.py                 # JWT generation, Bcrypt hashing, token validation
+│   ├── routers/                    # Route controllers
+│   │   ├── auth.py                 # /api/auth/register, /api/auth/token
+│   │   ├── records.py              # /api/records/ (CRUD)
+│   │   ├── dashboard.py            # /api/dashboard/summary
+│   │   └── users.py                # /api/users/ (Admin only)
+│   └── services/                   # Business logic & DB queries
+│
+└── frontend/                       # React 18 / Vite
     ├── src/
-    │   ├── api/             # Axios configuration
-    │   ├── components/      # Reusable UI components (Sidebar, Layout)
-    │   ├── context/         # React Context (AuthContext)
-    │   └── pages/           # Page views (Dashboard, Records, Users)
-    ├── tailwind.config.js   # Tailwind styling rules
-    └── vite.config.js       # Vite build configuration
+    │   ├── api/                    # Axios instance with JWT interceptors
+    │   ├── components/             # Sidebar, Layout, shared UI
+    │   ├── context/                # AuthContext — global auth state
+    │   └── pages/                  # Dashboard, Records, Users, Login
+    ├── tailwind.config.js
+    └── vercel.json                 # SPA routing rules for Vercel
 ```
 
-## Architecture & Design Decisions
-**FastAPI:** Chosen for its auto-generated Swagger documentation and extreme speed.  
-**React + Vite:** Chosen for rapid hot-module reloading and modern component-based architecture.  
-**Tailwind CSS:** Allows for utility-first styling without writing custom CSS files.
+### Frontend
+
+| Library | Role |
+|---|---|
+| **React 18 + Vite** | Component rendering with blazing-fast HMR |
+| **Tailwind CSS** | Utility-first responsive styling |
+| **Recharts** | Line charts (trends) and pie charts (breakdowns) |
+| **Axios** | HTTP client with custom interceptors for JWT attachment and global error handling |
+| **React Hot Toast** | User-facing error and success notifications |
+
+### Backend
+
+| Library | Role |
+|---|---|
+| **FastAPI** | High-performance async API framework |
+| **SQLAlchemy** | ORM for relational data management |
+| **Pydantic v2** | Request/response schema validation |
+| **Passlib + Bcrypt** | Secure password hashing |
+| **Python-Jose** | JWT token generation and verification |
+| **Uvicorn** | ASGI server |
+
+### Database & Deployment
+
+| Layer | Technology |
+|---|---|
+| **Dev Database** | SQLite (zero-config, auto-created as `finance.db`) |
+| **Prod Database** | PostgreSQL (via Render managed DB) |
+| **Frontend Hosting** | Vercel (with `vercel.json` for SPA routing) |
+| **Backend Hosting** | Render (dynamic CORS + PostgreSQL integration) |
 
 ---
 
-# 🛠️ Development
+## 🔌 API Reference
 
-## Running Locally
+> Full interactive docs available at `http://localhost:8000/docs` when running locally.
 
-Start the Backend server:
+### Authentication
+
+```
+POST  /api/auth/register        Create a new user (with role assignment)
+POST  /api/auth/token           Login → returns JWT Bearer token
+```
+
+### Financial Records
+
+```
+GET    /api/records/            List records (with filters: type, category, date range, search)
+POST   /api/records/            Create a record            [Analyst+ only]
+PUT    /api/records/{id}        Update a record            [Analyst+ only]
+DELETE /api/records/{id}        Soft-delete a record       [Admin only]
+```
+
+### Dashboard
+
+```
+GET    /api/dashboard/summary   Returns: total income, total expenses, net balance,
+                                category-wise totals, monthly trends
+```
+
+### User Management
+
+```
+GET    /api/users/              List all users             [Admin only]
+PATCH  /api/users/{id}/status   Toggle active/inactive     [Admin only]
+```
+
+### HTTP Status Codes in Use
+
+| Code | Meaning |
+|---|---|
+| `200 OK` | Successful read |
+| `201 Created` | Resource created |
+| `401 Unauthorized` | Missing or invalid JWT |
+| `403 Forbidden` | Authenticated but insufficient role |
+| `404 Not Found` | Resource doesn't exist |
+| `422 Unprocessable Entity` | Pydantic validation failed |
+
+---
+
+## 🚀 Running Locally
+
+### Prerequisites
+
+- **Node.js** v18+
+- **Python** v3.9+
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/rithvikreddy14/financehub.git
+cd financehub
+```
+
+### 2. Start the backend
+
 ```bash
 cd backend
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate        # Windows: .\venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Start the server
 uvicorn main:app --reload
 ```
 
-Start the Frontend server:
+Backend runs at **http://localhost:8000**
+Interactive API docs at **http://localhost:8000/docs**
+
+### 3. Start the frontend
+
 ```bash
+# Open a new terminal
 cd frontend
+npm install
 npm run dev
 ```
 
-## Build & Scripts
+Frontend runs at **http://localhost:5173**
 
-To build the frontend for production:
-```bash
-npm run build
-```
+### 4. Environment notes
 
-To preview the production build locally:
-```bash
-npm run preview
-```
-
-## Testing & Linting
-* Backend tests can be run using pytest (setup required).
-* Code style is enforced via standard ESLint rules in the Vite React template.
+- SQLite database auto-generates as `finance.db` on first run — no setup required
+- For production, set `SECRET_KEY`, `DATABASE_URL` (PostgreSQL), and update CORS origins in `main.py`
 
 ---
 
-# 🔌 API & Integrations
+## 🔐 Security Considerations
 
-## API Documentation
-Once the backend is running, the interactive API documentation is automatically generated.  
-Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
-ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
-
-## Key Endpoints
-* `POST /api/auth/register` - Create a new user.
-* `POST /api/auth/token` - Login to receive JWT.
-* `GET /api/dashboard/summary` - Retrieve aggregated financial data.
-* `GET /api/records/` - Retrieve paginated financial records.
-* `PUT /api/records/{id}` - Update a specific record.
+- **No plain-text passwords** — all passwords hashed with Bcrypt before storage
+- **Stateless auth** — JWTs contain only the user ID and expiry; no session state on the server
+- **Server-side RBAC** — roles checked inside FastAPI dependencies, not just the React UI
+- **Inactive users blocked instantly** — toggling `is_active=False` prevents login on next request without touching the token
+- **Input sanitized** — Pydantic rejects malformed payloads before they hit the database
 
 ---
 
-# 🚢 Deployment
+## 🗺️ Roadmap
 
-## CI/CD & Hosting
-* **Frontend:** Can be easily deployed to Vercel, Netlify, or GitHub Pages.
-* **Backend:** Recommended to deploy via Docker to platforms like Render, Railway, or AWS EC2.
-
-## Production Setup
-For production, ensure:
-* CORS origins in `main.py` are updated to match your live frontend URL.
-* The SQLite database is replaced with a robust DB (PostgreSQL).
-* The `SECRET_KEY` in `security.py` is loaded securely from environment variables.
+- [ ] Dark mode toggle
+- [ ] CSV / Excel export for records
+- [ ] Pagination on record listing
+- [ ] Weekly financial summary email notifications
+- [ ] Unit tests with `pytest` + `httpx`
+- [ ] Rate limiting on auth endpoints
 
 ---
 
-# 📦 Dependencies
+## 🤝 Contributing
 
-## Tech Stack & Libraries Used
+Contributions are welcome!
 
-### Frontend
-* React 18  
-* Vite  
-* Tailwind CSS (Styling)  
-* Recharts (Data Visualization)  
-* Lucide React (Icons)  
-* Axios (HTTP Client)  
-* React Router DOM (Navigation)  
-* React Hot Toast (Notifications)  
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m 'Add your feature'`
+4. Push the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
 
-### Backend
-* FastAPI  
-* Uvicorn (ASGI server)  
-* SQLAlchemy (ORM)  
-* Pydantic (Data validation)  
-* Passlib & Bcrypt (Password Hashing)  
-* Python-Jose (JWT generation)  
+For bugs or feature requests, please use the [Issues](https://github.com/rithvikreddy14/financehub/issues) tab.
 
 ---
 
-# 🤝 Contribution
+## 📄 License
 
-## Contributing & Guidelines
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
-
-1. Fork the Project  
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)  
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)  
-4. Push to the Branch (`git push origin feature/AmazingFeature`)  
-5. Open a Pull Request  
-
-## Code of Conduct
-Please ensure your code follows the existing style, includes appropriate comments, and passes all existing functionality checks before submitting a PR.
+Distributed under the **MIT License**. See `LICENSE` for details.
 
 ---
 
-# 🐞 Issues & Support
+<div align="center">
 
-## Troubleshooting & FAQ
-**Issue:** 422 Unprocessable Entity when saving a record.  
-**Solution:** Ensure you are inputting valid numbers for amounts. The frontend handles parsing, but extreme values or letters will trigger a rejection.
+Built with FastAPI · React · PostgreSQL · Deployed on Vercel + Render
 
-**Issue:** Blank white screen on the frontend.  
-**Solution:** Ensure your `postcss.config.js` exists and Tailwind is compiling correctly.
+**[Live Demo](https://financehub-lake.vercel.app/)** · **[Source Code](https://github.com/rithvikreddy14/financehub)**
 
-## Support
-If you encounter any unresolved issues, please open an issue in the repository's "Issues" tab.
-
----
-
-# 🔐 Security & Compliance
-
-## Security & Vulnerabilities
-* Passwords are never stored in plain text.  
-* Protected endpoints require a valid JWT Bearer token.  
-* RBAC strictly validates user IDs before allowing PUT or DELETE requests.  
-
-If you discover a vulnerability, please do not open a public issue. Email the repository owner directly.
-
----
-
-# 📄 Legal
-
-## License
-Distributed under the MIT License. See `LICENSE` file for more information.
-
-## Terms of Use
-This software is provided "as is", without warranty of any kind.
-
----
-
-# 👥 Credits & Acknowledgments
-
-## Authors
-* Your Name/Handle - Initial work & architecture
-
-## Acknowledgments
-* Mockup inspiration from modern SaaS financial designs.  
-* Icons provided by [Lucide](https://lucide.dev/).
-
----
-
-# 📊 Project Status
-
-## Status & Changelog
-**Current Version:** 1.0.0  
-
-**[v1.0.0] - Initial Release**  
-Implemented Auth, Dashboard Analytics, Record CRUD, and User Management toggles.
+</div>
